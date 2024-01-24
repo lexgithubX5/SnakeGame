@@ -16,7 +16,7 @@ public class Panel extends JPanel implements ActionListener {
 	final int y[]= new int [UNIT_AMOUNT];
 	
 	
-	int bodyParts =6;
+	int bodyParts =1;
 	int fruitsEaten;
 	int fruitX;
 	int fruitY;
@@ -29,7 +29,7 @@ public class Panel extends JPanel implements ActionListener {
 	Panel(){
 		random = new Random();
 		this.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
-		this.setBackground(new Color(random.nextInt(30),random.nextInt(30),random.nextInt(30)));
+		this.setBackground(new Color(random.nextInt(30),random.nextInt(30),random.nextInt(30)));//avoid lighter backgrounds if changing this settings. 
 		this.addKeyListener(new MyKeyAdapter());
 		this.setFocusable(true);
 		startGame();
@@ -60,7 +60,6 @@ public class Panel extends JPanel implements ActionListener {
 				}
 				else {
 					g.setColor(new Color(45,180,0));
-					//g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255),random.nextInt(255)));
 					g.fillOval(x[i], y[i], UNIT_SIZE,  UNIT_SIZE);
 					
 				}
